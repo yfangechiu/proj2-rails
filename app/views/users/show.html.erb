@@ -1,0 +1,16 @@
+<h3>Profile</h3>
+<p>Name: <%= @user.name if @user.name %></p>
+<!-- <p>Email: <%= @user.email if @user.email %></p>
+ --><div>
+ <p>Pending requests: </p>
+    <% @user.requests.each do |p| %>
+	<li>Status: <%= p.status%>
+<!-- 	  <%= button_to "Cancel request!", damage_path(id: p), :class => "button medium", :method => :patch %><p> -->
+    <% end %>
+<!--     <%= link_to "Create a new pokemon", pokemons_new_path %>
+ --></div>
+ <div>
+ 	<p>My pets: </p>
+ 	<% @user.pets.each do |p| %>
+	<li>Name: <%= p.name%>
+</div>
