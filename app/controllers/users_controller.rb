@@ -3,12 +3,13 @@ class UsersController < ApplicationController
 	def respond
 	end
 
-	def index
-		@users = User.all
-	end
 
 	def show
-		@users = User.find(params[:email])
+		#@user = User.find(1)
+
+		@user = User.find(params[:curr_user])
+
+		#@users = User.find(params[:curr_user])
 	end
 
 end
