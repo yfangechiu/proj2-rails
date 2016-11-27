@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   get '/users', to: 'users#show', as: 'curr_user'
   get '/newPet', to: 'pets#new', as: 'new_pet'
   post '/createPet', to: 'pets#create', as: 'create_pet'
+  get '/searchPets', to: 'pets#show', as: 'search_pets'
+  patch '/request', to: 'request#new', as: 'new_request'
+  post '/request', to: 'request#delete', as: 'delete_request'
+  post '/createRequest', to: 'request#create', as: 'create_request'
+  post '/deletePet', to: 'pets#delete', as: 'delete_pet'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

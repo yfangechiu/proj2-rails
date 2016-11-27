@@ -6,11 +6,13 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pets = pets.all
+    @pets = Pets.all
   end
 
   def show
-    @pet = pet.find(params[:id])
+    #shows all pets in search view that are not owned by this user
+    @user_id = params[:curr_user]
+    @pets = Pet.all
   end
 
   def create
@@ -28,8 +30,9 @@ class PetsController < ApplicationController
 
   def delete
     #delete pet with the params id
-    p = Pet.where(id: params[:id]).first
+    p = Pet.where(:id=>params[:pet_id]).first
     p.delete
+    redirect_to curr_user_path(curr_user: params[:user_id])
   end
 
 
